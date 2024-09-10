@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { logou } from "../assets";
 import { IoSearchOutline } from "react-icons/io5";
 import { FiShoppingBag, FiStar, FiUser } from "react-icons/fi";
 import Container from "./Container";
 import { FaChevronDown } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import FetchData from '../axios/config'
 
 
 const bottomNavigation= [
@@ -22,7 +23,23 @@ const bottomNavigation= [
 const Header = () => {
 
   const [searchText, setSearchText] = useState('');
+  const [categories, setCategories] = useState([]);
 
+
+  const getProds = async () => {
+    try {
+      const response = await FetchData.get("/cat");
+      const data = response.data;
+      console.log(data)
+      setCategories(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(()=>{
+    getProds();
+  },[]);
 
 
   return (

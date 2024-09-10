@@ -118,7 +118,7 @@ export const highlightsProducts = [
     title: "From $40.00",
     buttonTitle: "Browse Deals",
     image: "https://i.ibb.co/G951N5B/highlights-One.webp",
-    _base: "/product",
+    base: "/product",
     color: "#000000",
   },
   {
@@ -127,7 +127,7 @@ export const highlightsProducts = [
     title: "From $40.00",
     buttonTitle: "Shop Cellphone",
     image: "https://i.ibb.co/bLRNKGq/highlights-Two.webp",
-    _base: "/category/cellPhones",
+    base: "/category/cellPhones",
     color: "#ffffff",
   },
   {
@@ -136,7 +136,7 @@ export const highlightsProducts = [
     title: "From $40.00",
     buttonTitle: "Shop Now",
     image: "https://i.ibb.co/svWYstT/highlights-Three.webp",
-    _base: "/product",
+    base: "/product",
     color: "#ffffff",
   },
 ];
