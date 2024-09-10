@@ -44,17 +44,15 @@ DELETE http://localhost:3000/api/produtos/66d28519c49c2f396d6045e4
 
 ###
 
-PUT  http://localhost:3000/api/produtos/66c77638e8c908a64fba6bf4
+PUT  http://localhost:3000/api/categorias/66e049d09d98b7c9cf879726
 Content-Type: application/json
 
-{
-  "nome": "TESTE ATUALIZAÇÃO",
-  "descricao": "ATUALIZAÇÃO DA Descrição do produto 3",
-  "categoria": "TESTE Moletom",
-  "preco":15.00,
-  "tamanho": "PP",
-  "imagem": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fbr.freepik.com%2Ffotos-vetores-gratis%2Fmoletom-png&psig=AOvVaw3x3nhtcyEFttjuxO7NVLiW&ust=1724432225884000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCID9iOSIiYgDFQAAAAAdAAAAABAI"
-}
+  {
+    "name": "Cameras & Photos",
+    "image": "https://i.ibb.co/SVQVWSS/cat-Camera.webp",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis repellendus dolore.",
+    "_base": "camerasAndPhotos"
+  }
 
 ###
 

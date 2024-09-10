@@ -1,3 +1,4 @@
+import { Menu, MenuButton, MenuItem, MenuItems,Transition} from '@headlessui/react'
 import { useEffect, useState } from "react";
 import { logou } from "../assets";
 import { IoSearchOutline } from "react-icons/io5";
@@ -28,9 +29,8 @@ const Header = () => {
 
   const getProds = async () => {
     try {
-      const response = await FetchData.get("/cat");
+      const response = await FetchData.get("/categorias");
       const data = response.data;
-      console.log(data)
       setCategories(data);
     } catch (error) {
       console.log(error);
@@ -81,9 +81,33 @@ const Header = () => {
       </div>
       <div className="w-full bg-darkText text-whiteText">
         <Container className="py-2 max-w-4xl flex items-center justify-between gap-5">
-          <p className="flex items-center gap-2">Select Category
-          <FaChevronDown/>
-          </p>
+          {/* <p className="flex items-center gap-2">Select Category <FaChevronDown/>
+          </p> */}
+          <Menu>
+            <MenuButton className="inline-flex items-center gap-2 justify-between py-1.5 px-3 font-semibold text-gray-300 hover:text-whiteText">
+            Select Category <FaChevronDown className='text-base mt-1' />
+            </MenuButton>
+            <Transition
+              enter='Transition ease-out duration-75'
+              enterFrom='opacity-0 scale-95'
+              enterTo='opacity-100 scale-100'
+              leave='Transition ease-in duration-100'
+              leaveFrom='opacity-100 scale-100'
+              leaveTo='opacity-0 scale-95'
+            >
+              <MenuItems anchor="bottom end" className={` w-52 origin-top-right rounded-xl  text-sm/6
+                text-gray-300 bg-black focus:outline-none z-50`}>
+                {categories.map((item)=>(
+                  <MenuItem className="flex gap-3 p-2" key={item._id}>
+                    <Link className='hover:text-blue-500' to={`/categorias/${item?._base}`}>
+                      <img src={item?.image} alt="Cat-Image" className='w-6 h-6 rounded-md'/>
+                      {item?.name}
+                    </Link>
+                  </MenuItem>
+                ))}
+              </MenuItems>
+            </Transition>
+          </Menu>
           {
             bottomNavigation.map(({title, link})=>(
               <Link to={link} className="uppercase cursor-pointer hidden md:inline-flex text-sm font-semibold text-white/90 hover: text-whiteText duration-200 relative overflow-hidden group" key={title}>

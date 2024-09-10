@@ -9,6 +9,7 @@ const categoriesController = {
         name:  req.body.name,
         image: req.body.image,
         description: req.body.description,
+        _base: req.body._base
       }
 
 
@@ -73,6 +74,7 @@ const categoriesController = {
         name:  req.body.name,
         image: req.body.image,
         description: req.body.description,
+        _base: req.body._base
       };
 
       const updatedcategories = await CategoriesModel.findByIdAndUpdate(id, categories)

@@ -13,6 +13,9 @@ const categoriesSchema = new Schema({
   description:{
     type: String,
   },
+  _base:{
+    type: String,
+  },
 }, { timestamps: true}
 );
 
