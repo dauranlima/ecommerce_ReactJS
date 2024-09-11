@@ -3,17 +3,19 @@ import Categories from "../../components/Categories";
 import Container from "../../components/Container";
 import Highlights from "../../components/Highlights";
 import Homebanner from "../../components/Homebanner";
+import ProductList from "../../components/ProductList";
 
 
 export default function Home() {
   return (
     <>
-      <div>
+      <Container>
         <BannerCat/>
         <Homebanner/>
         <Highlights/>
         <Categories/>
-      </div>
+        <ProductList/>
+      </Container>
     </>
   );
 }
