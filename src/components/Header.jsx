@@ -81,11 +81,9 @@ const Header = () => {
       </div>
       <div className="w-full bg-darkText text-whiteText">
         <Container className="py-2 max-w-4xl flex items-center justify-between gap-5">
-          {/* <p className="flex items-center gap-2">Select Category <FaChevronDown/>
-          </p> */}
           <Menu>
             <MenuButton className="inline-flex items-center gap-2 justify-between py-1.5 px-3 font-semibold text-gray-300 hover:text-whiteText">
-            Select Category <FaChevronDown className='text-base mt-1' />
+            Selecione a Categoria <FaChevronDown className='text-base mt-1' />
             </MenuButton>
             <Transition
               enter='Transition ease-out duration-75'

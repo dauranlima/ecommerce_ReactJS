@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import FetchData from "../axios/config";
+import CustomLeftArrow from "./CustomLeftArrow";
+import CustomRightArrow from "./CustomRightArrow";
 
 
 const responsive = {
@@ -53,13 +55,16 @@ export default function BannerCat() {
       responsive={responsive}
       infinite={true}
       autoPlay={true}
-      transitionDuration={2000}
-      className="flex flex-row p4 max-w-screen-xl
-      mx-auto lg:px-0 relative"
-    >
+      transitionDuration={4000}
+      className="flex flex-row p-4 max-w-screen-xl mx-auto lg:px-0 relative"
+      customLeftArrow={<CustomLeftArrow/>}
+      customRightArrow={<CustomRightArrow/>}>
+
+
       {categories.map((item)=>(
-        <Link className="flex flex-1 items-center gap-x-2 p-1 w-16 h-16 border-gray-100 mr-1 hover:border-skyText hover:shadow-lg" key={item._id}>
-          <img className="w-10 h-10 rounded-full object-cover" src={item.image} alt="img-cat" />
+        <Link className="flex items-center gap-5 w-fit h-20 " key={item._id}
+        to={`category/${item?._base}`}>
+          <img className="w-16 h-16 rounded-full" src={item.image} alt="img-cat" />
           <p className="text-sm font-semibold">{item.name}</p>
         </Link>
       ))}
